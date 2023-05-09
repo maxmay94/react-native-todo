@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import TodoItem from './TodoItem';
 import api from '../api';
 
@@ -42,6 +42,9 @@ const TodoList = () => {
 
 return (
     <ScrollView className=''>
+      <Text className='text-center font-bold text-2xl'>
+        Todo List
+      </Text>
       {items.map((item) => (
         <TodoItem
 					key={item.id}

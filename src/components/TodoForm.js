@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, TextInput, Button, Text } from 'react-native';
 import api from '../api';
 
 const TodoForm = ({ onNewItem }) => {
@@ -19,13 +19,18 @@ const TodoForm = ({ onNewItem }) => {
 
   return (
     <View className='m-10'>
+      <Text className='text-center pb-3 text-xl'>
+        Add a new item to the list
+      </Text>
       <TextInput
         className='border-2 bg-white border-gray-400 rounded-md p-2'
         onChangeText={setText}
         value={text}
         placeholder="Enter new item"
       />
-      <Button title="Add" onPress={handleSubmit} />
+      <View className='bg-green-100 rounded p-3 mx-10 my-3'>
+        <Button title="Add" onPress={handleSubmit} />
+      </View>
     </View>
   );
 };
