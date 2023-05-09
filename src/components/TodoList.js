@@ -41,10 +41,12 @@ const TodoList = () => {
   };
 
 return (
+  <View>
+    <Text className='text-center font-bold text-2xl'>
+      Todo List
+    </Text>
+
     <ScrollView className=''>
-      <Text className='text-center font-bold text-2xl'>
-        Todo List
-      </Text>
       {items.map((item) => (
         <TodoItem
 					key={item.id}
@@ -54,6 +56,7 @@ return (
         />
       ))}
     </ScrollView>
+  </View>
   );
 };
 
