@@ -3,28 +3,7 @@ import { View, ScrollView, Text } from 'react-native'
 import TodoItem from './TodoItem'
 import api from '../api'
 
-const TodoList = () => {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    console.log('fetching items')
-    fetchItems()
-  }, [])
-
-
-  const fetchItems = async () => {
-    try {
-      const response = await api.get('todos/');
-      setItems(response.data)
-    } catch (error) {
-      if (error.response) {
-        console.error('Error status:', error.response.status)
-        console.error('Error headers:', error.response.headers)
-      } else {
-        console.error('Error:', error.message)
-      }
-    }
-  }
+const TodoList = ({items}) => {
 
   const handleUpdate = (updatedItem) => {
     setItems(items.map((item) => (item.id === updatedItem.id ? updatedItem : item)))
@@ -32,10 +11,6 @@ const TodoList = () => {
 
   const handleDelete = (itemId) => {
     setItems(items.filter((item) => item.id !== itemId))
-  }
-
-  const handleNewItem = (newItem) => {
-    setItems([...items, newItem])
   }
 
 return (
