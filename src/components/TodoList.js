@@ -41,7 +41,7 @@ const TodoList = () => {
   };
 
 return (
-    <ScrollView>
+    <ScrollView className=''>
       {items.map((item) => (
         <TodoItem
 					key={item.id}

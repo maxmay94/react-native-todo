@@ -25,7 +25,7 @@ const TodoItem = ({ item, onUpdate, onDelete }) => {
   };
 
   return (
-    <View className=''>
+    <View className='flex text-center bg-slate-300 m-5'>
       <TouchableOpacity onPress={handleToggle}>
 
         <Text

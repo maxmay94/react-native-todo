@@ -18,8 +18,9 @@ const TodoForm = ({ onNewItem }) => {
   };
 
   return (
-    <View>
+    <View className='m-10'>
       <TextInput
+        className='border-2 bg-white border-gray-400 rounded-md p-2'
         onChangeText={setText}
         value={text}
         placeholder="Enter new item"

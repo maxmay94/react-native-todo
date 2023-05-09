@@ -7,7 +7,7 @@ import api from './src/api';
 const App = () => {
 
   return (
-    <SafeAreaView className='h-full bg-slate-200'>
+    <SafeAreaView className='h-full bg-red-200'>
       <TodoForm />
       <TodoList />
     </SafeAreaView>
