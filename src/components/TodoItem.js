@@ -1,28 +1,28 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import api from '../api';
+import React from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import api from '../api'
 
 const TodoItem = ({ item, onUpdate, onDelete }) => {
-  console.log('item', item);
+  console.log('item', item)
   const handleToggle = async () => {
     try {
       const response = await api.patch(`todos/${item.id}/`, {
         completed: !item.completed,
       });
-      onUpdate(response.data);
+      onUpdate(response.data)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
 
   const handleDelete = async () => {
     try {
-      await api.delete(`todos/${item.id}/`);
-      onDelete(item.id);
+      await api.delete(`todos/${item.id}/`)
+      onDelete(item.id)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
 
   return (
     <View className='flex text-center bg-slate-300 mx-10 my-3 rounded-xl'>
@@ -47,7 +47,7 @@ const TodoItem = ({ item, onUpdate, onDelete }) => {
 
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
-export default TodoItem;
+export default TodoItem

@@ -1,7 +1,7 @@
-import React from 'react';
-import { SafeAreaView } from 'react-native';
-import TodoList from './src/components/TodoList';
-import TodoForm from './src/components/TodoForm';
+import React from 'react'
+import { SafeAreaView } from 'react-native'
+import TodoList from './src/components/TodoList'
+import TodoForm from './src/components/TodoForm'
 
 const App = () => {
 
@@ -10,7 +10,7 @@ const App = () => {
       <TodoForm />
       <TodoList />
     </SafeAreaView>
-  );
-};
+  )
+}
 
-export default App;
+export default App

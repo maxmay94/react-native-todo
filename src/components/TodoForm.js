@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
-import api from '../api';
+import React, { useState } from 'react'
+import { View, TextInput, Button, Text } from 'react-native'
+import api from '../api'
 
 const TodoForm = ({ onNewItem }) => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState('')
 
   const handleSubmit = async () => {
     if (text) {
       try {
-        const response = await api.post('todos/', { title: text });
-        setText('');
-        onNewItem(response.data);
+        const response = await api.post('todos/', { title: text })
+        setText('')
+        onNewItem(response.data)
       } catch (error) {
-        console.error(error);
+        console.error(error)
       }
     }
-  };
+  }
 
   return (
     <View className='m-10'>
@@ -32,7 +32,7 @@ const TodoForm = ({ onNewItem }) => {
         <Button title="Add" onPress={handleSubmit} />
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default TodoForm;
+export default TodoForm
