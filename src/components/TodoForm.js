@@ -23,7 +23,7 @@ const TodoForm = ({ onNewItem }) => {
         Add a new item to the list
       </Text>
       <TextInput
-        className='border-2 bg-white border-gray-400 rounded-md p-2'
+        className='h-10 text-xl bg-white rounded-md p-2 text-center'
         onChangeText={setText}
         value={text}
         placeholder="Enter new item"

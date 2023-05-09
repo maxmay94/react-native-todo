@@ -17,9 +17,7 @@ const TodoList = () => {
       const response = await api.get('todos/');
       setItems(response.data)
     } catch (error) {
-      // console.error(error)
       if (error.response) {
-        // console.error('Error data:', error.response.data)
         console.error('Error status:', error.response.status)
         console.error('Error headers:', error.response.headers)
       } else {
@@ -30,15 +28,15 @@ const TodoList = () => {
 
   const handleUpdate = (updatedItem) => {
     setItems(items.map((item) => (item.id === updatedItem.id ? updatedItem : item)))
-  };
+  }
 
   const handleDelete = (itemId) => {
     setItems(items.filter((item) => item.id !== itemId))
-  };
+  }
 
   const handleNewItem = (newItem) => {
     setItems([...items, newItem])
-  };
+  }
 
 return (
   <View>
