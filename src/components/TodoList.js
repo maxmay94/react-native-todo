@@ -3,15 +3,7 @@ import { View, ScrollView, Text } from 'react-native'
 import TodoItem from './TodoItem'
 import api from '../api'
 
-const TodoList = ({items}) => {
-
-  const handleUpdate = (updatedItem) => {
-    setItems(items.map((item) => (item.id === updatedItem.id ? updatedItem : item)))
-  }
-
-  const handleDelete = (itemId) => {
-    setItems(items.filter((item) => item.id !== itemId))
-  }
+const TodoList = ({items, handleDelete, handleUpdate}) => {
 
 return (
   <View>

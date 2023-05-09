@@ -28,6 +28,14 @@ const App = () => {
     }
   }
 
+  const handleUpdate = (updatedItem) => {
+    setItems(items.map((item) => (item.id === updatedItem.id ? updatedItem : item)))
+  }
+
+  const handleDelete = (itemId) => {
+    setItems(items.filter((item) => item.id !== itemId))
+  }
+
   const onNewItem = (newItem) => {
     setItems([...items, newItem])
   }
@@ -35,7 +43,7 @@ const App = () => {
   return (
     <SafeAreaView className='h-full bg-slate-200'>
       <TodoForm onNewItem={onNewItem} />
-      <TodoList items={items} />
+      <TodoList items={items} handleDelete={handleDelete} handleUpdate={handleUpdate} />
     </SafeAreaView>
   )
 }
